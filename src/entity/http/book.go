@@ -6,7 +6,7 @@ type BookRequest struct {
 	Title         string     `json:"title"`
 	Synopsis      string     `json:"synopsis"`
 	PublishedDate *time.Time `json:"published_date"`
-	AuthorId      uint       `json:"authod_id"`
+	AuthorId      uint       `json:"author_id"`
 }
 
 type BookDetailResponse struct {
@@ -14,7 +14,7 @@ type BookDetailResponse struct {
 	Title         string     `json:"title"`
 	Synopsis      string     `json:"synopsis"`
 	PublishedDate *time.Time `json:"published_date"`
-	AuthorId      uint       `json:"authod_id"`
+	AuthorId      uint       `json:"author_id"`
 	CreatedAt     *time.Time `json:"created_at"`
 	UpdatedAt     *time.Time `json:"updated_at"`
 }
