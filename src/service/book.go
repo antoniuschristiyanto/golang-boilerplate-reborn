@@ -52,7 +52,7 @@ func (service *BookService) StoreBook(payload httpEntity.BookRequest) bool {
 		Title:         payload.Title,
 		Synopsis:      payload.Synopsis,
 		PublishedDate: payload.PublishedDate,
-		AuthorId:      payload.UserId,
+		AuthorId:      payload.AuthorId,
 		CreatedAt:     &now,
 		UpdatedAt:     &now,
 	}
@@ -70,7 +70,7 @@ func (service *BookService) UpdateBookById(id int, payload httpEntity.BookReques
 		Title:         payload.Title,
 		Synopsis:      payload.Synopsis,
 		PublishedDate: payload.PublishedDate,
-		AuthorId:      payload.UserId,
+		AuthorId:      payload.AuthorId,
 		UpdatedAt:     &now,
 	}
 	err := service.bookRepository.UpdateBookById(id, book)
