@@ -11,3 +11,20 @@ services:
     volumes:
       - './src:/go/src/example_app:rw'
     tty: true
+    links:
+      - mysql
+  mysql:
+    restart: always
+    build:
+      context: ./docker-configuration
+      dockerfile: mysql-docker
+    container_name: golang_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 'b2bmarketplace' # TODO: Change this
+      MYSQL_USER: 'demo'
+      MYSQL_PASS: 'demo'
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    ports:
+      # <Port exposed> : < Port running inside container>
+      - 3306:3306
