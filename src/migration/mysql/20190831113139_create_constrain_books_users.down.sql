@@ -1,1 +1,1 @@
-ALTER TABLE `books` DROP FOREIGN KEY `books_users`;
+ALTER TABLE `books` DROP FOREIGN KEY `books_users`
