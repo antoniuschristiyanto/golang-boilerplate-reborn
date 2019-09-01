@@ -10,7 +10,7 @@ type Book struct {
 	CreatedAt     *time.Time `gorm:"column:created_at" json:"created_at"`
 	UpdatedAt     *time.Time `gorm:"column:updated_at" json:"updated_at"`
 	DeletedAt     *time.Time `gorm:"column:deleted_at" json:"deleted_at"`
-	User          *User      `gorm:"auto_preload, foreignkey:AuthorId, association_foreignkey:ID"`
+	User          *User      `gorm:"auto_preload", gorm:"foreignkey:AuthorId""`
 	AuthorId      uint       `gorm:"column:author_id"`
 }
 
